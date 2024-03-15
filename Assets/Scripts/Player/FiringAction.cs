@@ -54,7 +54,7 @@ public class FiringAction : NetworkBehaviour
     void ShootLocalBullet()
     {
         if (fireTimer.Value < fireRate) return;
-        if (!ammo.CanUseAmmo()) return;
+        if (!ammo.HasAmmo()) return;
 
         var bullet = Instantiate(clientSingleBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());

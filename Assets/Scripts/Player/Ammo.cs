@@ -21,7 +21,7 @@ namespace Player
             reloadTimer = reloadTime;
         }
 
-        public bool CanUseAmmo()
+        public bool HasAmmo()
         {
             return CurrentAmmo.Value > 0;
         }
