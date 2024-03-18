@@ -24,9 +24,11 @@ public class Health : NetworkBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (currentShield.Value > 0) return;
-
-        currentShield.Value--;
+        if (currentShield.Value > 0)
+        {
+            currentShield.Value--;
+            return;
+        }
 
         damage = damage < 0 ? damage : -damage;
         currentHealth.Value += damage;
